@@ -1,0 +1,32 @@
+{
+  "name": "stopdropnbroll",
+  "version": "0.0.1",
+  "description": "stopdropnbroll.com",
+  "dependencies": {
+    "koa": "^0.21.0",
+    "koa-json": "^1.1.1",
+    "koa-react-view": "^1.0.2",
+    "koa-router": "^5.1.2",
+    "koa-static": "^1.4.9",
+    "koa-static-cache": "^3.1.1",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.1",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrbroll/stopdropnbroll.git"
+  },
+  "author": "Michael R. Broll",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrbroll/stopdropnbroll/issues"
+  },
+  "homepage": "https://github.com/mrbroll/stopdropnbroll"
+}
