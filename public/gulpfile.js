@@ -5,14 +5,13 @@ var source = require('vinyl-source-stream')
 var path = require('path')
 
 var src = {
-    base: path.join(__dirname, 'src'),
-    js: path.join(__dirname, 'src', 'public', 'js'),
-    jsx: path.join(__dirname, 'src', 'public', 'jsx')
+    js: path.join(__dirname, 'src', 'js'),
+    jsx: path.join(__dirname, 'src', 'jsx')
 }
 
 var build = {
-    js: path.join(__dirname, 'build', 'public', 'js'),
-    jsx: path.join(__dirname, 'build', 'public', 'jsx')
+    js: path.join(__dirname, 'build', 'js'),
+    jsx: path.join(__dirname, 'build', 'jsx')
 }
 
 gulp.task('browserify', function() {

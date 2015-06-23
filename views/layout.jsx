@@ -1,5 +1,4 @@
 var React = require('react')
-var config = require('../../config')
 var path = require('path')
 
 var Layout = React.createClass({

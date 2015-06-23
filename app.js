@@ -5,7 +5,7 @@ var serve = require('koa-static')
 var path = require('path')
 
 var viewPath = path.join(__dirname, 'views')
-var publicPath = path.join(__dirname, '..', 'build', 'public')
+var publicPath = path.join(__dirname, 'public', 'build')
 
 react(app, {
     views: viewPath,
