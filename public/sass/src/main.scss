@@ -1,0 +1,11 @@
+@import "bourbon";
+@import "neat";
+@import "components/search-bar";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    background: black;
+}

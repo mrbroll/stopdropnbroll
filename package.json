@@ -17,6 +17,8 @@
     "gulp-develop-server": "^0.4.3",
     "gulp-livereload": "^3.8.0",
     "gulp-sass": "^2.0.1",
+    "node-bourbon": "^4.2.3",
+    "node-neat": "^1.7.2",
     "reactify": "^1.1.1",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.2"
