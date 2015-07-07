@@ -1,0 +1,59 @@
+$menu-size: 100px;
+$radius: 0.5 * $menu-size;
+$inner-size: $menu-size * 0.70710678;
+
+
+#menu-container {
+  width: $menu-size;
+  height: $menu-size;
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  display: inline-block;
+  * {
+      position: relative;
+      display: inline-block;
+  }
+}
+
+#circle {
+  border-radius: $radius;
+  width: $menu-size;
+  height: $menu-size;
+  background: black;
+}
+
+#rectangle-container {
+  width: $inner-size;
+  height: $inner-size;
+  background: black;
+  margin: 0.5 * ($menu-size -  $inner-size);
+}
+
+$rectangle-height: 0.2 * $inner-size;
+$rectangle-width: 0.9 * $inner-size;
+$rectangle-margin-x: ($inner-size - $rectangle-width) * 0.5;
+$rectangle-margin-y: ($inner-size * 0.333 - $rectangle-height * 3) * 0.5;
+$rectangle-radius: $rectangle-height/2;
+
+.rectangle {
+  width: 0.9 * $inner-size;
+  height: 0.2 * $inner-size;
+  background: white;
+  margin: $rectangle-margin-y $rectangle-margin-x;
+  border-radius: $rectangle-radius;
+  transition: all 0.5s;
+}
+
+.open {
+  .rectangle {
+    &.top {
+    transform: rotate(45deg) translate(12px, 14px);
+    }
+    &.bottom {
+      transform: rotate(-45deg) translate(12px, -12px);
+    }
+    &.middle{
+      opacity: 0;
+    }
+  }
+}

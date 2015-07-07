@@ -11,9 +11,7 @@ var MainLayout = React.createClass({
                 <body>
                     <header id="header"></header>
                     {this.props.children}
-                    <footer id="footer">
-                        <object type="image/svg+xml" data="/images/menu_icon.svg" height="100" width="100"></object>
-                    </footer>
+                    <footer id="footer"></footer>
                     <script src="/js/build/main.js"></script>
                 </body>
             </html>

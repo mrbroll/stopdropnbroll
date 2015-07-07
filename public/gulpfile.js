@@ -6,6 +6,7 @@ var source = require('vinyl-source-stream')
 var sass = require('gulp-sass')
 var bourbon = require('node-bourbon')
 var neat = require('node-neat')
+var autoprefixer = require('gulp-autoprefixer')
 
 var paths = {
     js: {
@@ -37,5 +38,6 @@ gulp.task('sass', function() {
         .pipe(sass({
             includePaths: neat.includePaths
         }))
+        .pipe(autoprefixer())
         .pipe(gulp.dest(path.join(paths.sass.build)))
 })

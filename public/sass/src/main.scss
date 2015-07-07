@@ -1,10 +1,12 @@
 @import "bourbon";
 @import "neat";
-@import "components/search-bar";
+@import "components/_menu-button";
+@import "components/_search-bar";
 
 * {
     padding: 0;
     margin: 0;
+    border-size: 0;
     box-sizing: border-box;
     color: white;
     background: black;
