@@ -11,15 +11,18 @@ var autoprefixer = require('gulp-autoprefixer')
 var paths = {
     js: {
         src: path.join(__dirname, 'js', 'src'),
-        build: path.join(__dirname, 'js', 'build')
+        build: path.join(__dirname, 'js', 'build'),
+        watch: path.join(__dirname, 'js', 'src', '**', '*.js')
     },
     jsx: {
         src: path.join(__dirname, 'jsx', 'src'),
-        build: path.join(__dirname, 'jsx', 'build')
+        build: path.join(__dirname, 'jsx', 'build'),
+        watch: path.join(__dirname, 'jsx', 'src', '**', '*.jsx')
     },
     sass: {
         src: path.join(__dirname, 'sass', 'src'),
-        build: path.join(__dirname, 'sass', 'build')
+        build: path.join(__dirname, 'sass', 'build'),
+        watch: path.join(__dirname, 'sass', 'src', '**', '*.scss')
     }
 }
 
@@ -41,3 +44,10 @@ gulp.task('sass', function() {
         .pipe(autoprefixer())
         .pipe(gulp.dest(path.join(paths.sass.build)))
 })
+
+gulp.task('watch', function() {
+    gulp.watch(paths.sass.watch, ['sass'])
+    gulp.watch(paths.js.watch, ['browserify'])
+})
+
+gulp.task('default', ['watch', 'sass', 'browserify'])
