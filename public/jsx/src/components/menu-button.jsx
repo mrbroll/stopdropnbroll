@@ -3,20 +3,14 @@ var React = require('react')
 var MenuButton = React.createClass({
     render: function() {
         return (
-            <div id="menu-container" onClick={this.handleClick}>
-              <div id="circle">
-                <div id="rectangle-container">
-                  <div className="rectangle top"></div>
-                  <div className="rectangle middle"></div>
-                  <div className="rectangle bottom"></div>
-                </div>
-              </div>
-            </div>
+            <button className="menu-button x" type="button" role="button" aria-label="Toggle Navigation" onClick={this.handleClick}>
+                <span className="lines"></span>
+            </button>
         )
     },
     handleClick: function(e) {
         e.preventDefault();
-        this.getDOMNode().classList.toggle('open')
+        this.getDOMNode().classList.toggle('close')
     }
 })
 

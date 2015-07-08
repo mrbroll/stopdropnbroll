@@ -48,6 +48,7 @@ gulp.task('sass', function() {
 gulp.task('watch', function() {
     gulp.watch(paths.sass.watch, ['sass'])
     gulp.watch(paths.js.watch, ['browserify'])
+    gulp.watch(paths.jsx.watch, ['browserify'])
 })
 
 gulp.task('default', ['watch', 'sass', 'browserify'])

@@ -1,59 +1,82 @@
-$menu-size: 100px;
-$radius: 0.5 * $menu-size;
-$inner-size: $menu-size * 0.70710678;
+$button-size : 4rem; 
+$transition: .3s; // increase this to see the transformations in slow-motion
+$button-color: black;
+$line-color: white;
+$line-height: $button-size/6;
+ 
+.menu-button {
+    display: inline-block;
+    padding: $button-size/2 + $line-height  $button-size/4;
+    transition: .3s;
+    cursor: pointer;
+    border-radius: $button-size;
+    outline: none;
+    border: none;
+    background: black;
 
-
-#menu-container {
-  width: $menu-size;
-  height: $menu-size;
-  background: rgba(0, 0, 0, 0);
-  position: relative;
-  display: inline-block;
-  * {
-      position: relative;
-      display: inline-block;
-  }
-}
-
-#circle {
-  border-radius: $radius;
-  width: $menu-size;
-  height: $menu-size;
-  background: black;
-}
-
-#rectangle-container {
-  width: $inner-size;
-  height: $inner-size;
-  background: black;
-  margin: 0.5 * ($menu-size -  $inner-size);
-}
-
-$rectangle-height: 0.2 * $inner-size;
-$rectangle-width: 0.9 * $inner-size;
-$rectangle-margin-x: ($inner-size - $rectangle-width) * 0.5;
-$rectangle-margin-y: ($inner-size * 0.333 - $rectangle-height * 3) * 0.5;
-$rectangle-radius: $rectangle-height/2;
-
-.rectangle {
-  width: 0.9 * $inner-size;
-  height: 0.2 * $inner-size;
-  background: white;
-  margin: $rectangle-margin-y $rectangle-margin-x;
-  border-radius: $rectangle-radius;
-  transition: all 0.5s;
-}
-
-.open {
-  .rectangle {
-    &.top {
-    transform: rotate(45deg) translate(12px, 14px);
+    &:hover {
+        opacity: 1;
     }
-    &.bottom {
-      transform: rotate(-45deg) translate(12px, -12px);
+
+    &:active {
+        transition: 0;
+        background: rgba(0,0,0,.1);
     }
-    &.middle{
-      opacity: 0;
+}
+
+
+@mixin line {
+    display: inline-block;
+    width: $button-size;
+    height: $line-height;
+    background: $line-color;
+    border-radius: $line-height/2; 
+    transition: $transition;
+}
+
+
+.lines {
+    //create middle line
+    @include line;
+    position: relative;
+
+    /*create the upper and lower lines as pseudo-elements of the middle line*/
+    &:before, &:after {
+        @include line;
+        position: absolute;
+        left:0;
+        content: '';
     }
-  }
+
+    &:before { top: $button-size/4; }
+    &:after { top: -$button-size/4; }
+}
+
+.menu-button.x .lines {
+    transition: background .3s .6s ease;
+ 
+    &:before, &:after {
+        //set transform origin back to center
+        transform-origin: 50% 50%;
+        transition: top .3s .6s ease, transform .3s ease;
+    }
+}
+
+.menu-button.x.close .lines {
+    transition: background .3s 0s ease;
+    background: transparent;
+
+    &:before, &:after {
+        transition: top .3s ease, transform .3s .5s ease;      
+        top:0;
+        width: $button-size;
+    }
+
+    &:before {
+        transform: rotate3d(0,0,1,45deg); 
+    }
+
+    &:after {
+        transform: rotate3d(0,0,1,-45deg); 
+    }
 }
