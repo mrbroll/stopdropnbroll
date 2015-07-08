@@ -8,7 +8,7 @@ var viewPath  = path.join(__dirname, 'views')
 var pagePath = path.join(viewPath, 'pages')
 var layoutPath = path.join(viewPath, 'layouts')
 var componentPath = path.join(viewPath, 'components')
-var publicPath = path.join(__dirname, 'public')
+var publicPath = path.join(__dirname, '..', 'public')
 var jsPath = path.join(publicPath, 'build')
 
 react(app, {

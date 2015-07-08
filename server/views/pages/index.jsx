@@ -6,7 +6,6 @@ var index = React.createClass({
         return (
             <MainLayout title={this.props.title}>
                 <h1>{this.props.title}</h1>
-                <p>Well, it looks like this worked!!!</p>
                 <div id="content"></div>
             </MainLayout>
         )

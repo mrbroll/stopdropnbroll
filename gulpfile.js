@@ -31,6 +31,8 @@ var paths = {
     server: {
         views: path.join(serverPath, 'views'),
         app: path.join(serverPath, 'app.js'),
+        viewsWatch: path.join(serverPath, 'views', '**', '*.jsx'),
+        watch: path.join(serverPath, '**', '*.js')
     }
 }
 
@@ -50,7 +52,7 @@ gulp.task('sass', function() {
             includePaths: neat.includePaths
         }))
         .pipe(autoprefixer())
-        .pipe(gulp.dest(path.join(paths.sass.build)))
+        .pipe(gulp.dest(paths.sass.build))
 })
 
 gulp.task('server:start', function() {
@@ -61,7 +63,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.sass.watch, ['sass'])
     gulp.watch(paths.js.watch, ['browserify'])
     gulp.watch(paths.jsx.watch, ['browserify'])
-    gulp.watch([ paths.server.app, path.join(serverPath, '**', '*.js') ], server.restart)
+    gulp.watch([ paths.server.app, paths.server.watch, paths.server.viewsWatch ], server.restart)
 })
 
 gulp.task('default', [ 'watch', 'sass', 'browserify', 'server:start' ])
