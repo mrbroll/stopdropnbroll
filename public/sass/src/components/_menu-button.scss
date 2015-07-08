@@ -13,6 +13,8 @@ $line-height: $button-size/6;
     outline: none;
     border: none;
     background: black;
+    opacity: 0.5;
+    box-shadow: $button-size/20 $button-size/20 $button-size/10 $button-color;
 
     &:hover {
         opacity: 1;
@@ -32,6 +34,7 @@ $line-height: $button-size/6;
     background: $line-color;
     border-radius: $line-height/2; 
     transition: $transition;
+    opacity: 1;
 }
 
 
