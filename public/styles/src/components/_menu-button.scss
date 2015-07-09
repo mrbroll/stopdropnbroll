@@ -1,20 +1,21 @@
-$button-size : 4rem; 
+$button-size : 6rem; 
 $transition: .3s; // increase this to see the transformations in slow-motion
 $button-color: black;
 $line-color: white;
-$line-height: $button-size/6;
+$line-height: $button-size/7;
  
 .menu-button {
     display: inline-block;
-    padding: $button-size/2 + $line-height  $button-size/4;
+    padding: 3 * $button-size/7 + $button-size/4 $button-size/4;
     transition: .3s;
     cursor: pointer;
-    border-radius: $button-size;
+    border-radius: 0.75 * $button-size;
     outline: none;
     border: none;
     background: black;
     opacity: 0.5;
     box-shadow: $button-size/20 $button-size/20 $button-size/10 $button-color;
+    float: right;
 
     &:hover {
         opacity: 1;
@@ -81,4 +82,47 @@ $line-height: $button-size/6;
     &:after {
         transform: rotate3d(0,0,1,-45deg); 
     }
+}
+
+
+$menu-height: 20rem;
+$menu-width: 40rem;
+
+#menu {
+    &, .menu-items, .menu-items * {
+        background: black;
+    }
+    height: 1.5 * $button-size;
+    width: 1.5 * $button-size;
+    border-radius: .75 * $button-size;
+    transition: all 0.3s;
+    float: right;
+    .menu-items {
+        with: 0;
+        height: 0;
+        padding: 0;
+        opacity: 0;
+    }
+  
+    &.open {
+        border-radius: 0;
+        height: $menu-height;
+        width: $menu-width;
+        .menu-items {
+            opacity: 1;
+            transition: opacity 0.3s 0.3s;
+        }
+    }
+}
+
+.menu-items {
+    height: $menu-height - 1.5 * $button-size;
+    display: block;
+    padding: 2rem;
+    transition: opacity .3s;
+}
+
+.menu-item {
+    padding: 1rem;
+    display: block;
 }

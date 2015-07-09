@@ -6,7 +6,7 @@ var MainLayout = React.createClass({
             <html>
                 <head>
                     <title>{this.props.title}</title>
-                    <link rel="stylesheet" href="/sass/build/main.css" />
+                    <link rel="stylesheet" href="/styles/build/main.css" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                 </head>
                 <body>

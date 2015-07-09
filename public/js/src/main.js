@@ -1,7 +1,7 @@
 var React = require('react')
 var Content = require('../../jsx/src/components/content.jsx')
 var SearchBar = require('../../jsx/src/components/search-bar.jsx')
-var MenuButton = require('../../jsx/src/components/menu-button.jsx')
+var Menu = require('../../jsx/src/components/menu.jsx')
 
 
 function init() {
@@ -11,13 +11,8 @@ function init() {
     )
 
     React.render (
-        <SearchBar />,
+        <Menu />,
         document.getElementById('header')
-    )
-
-    React.render (
-        <MenuButton />,
-        document.getElementById('footer')
     )
 }
 

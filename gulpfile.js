@@ -24,9 +24,9 @@ var paths = {
         watch: path.join(publicPath, 'jsx', 'src', '**', '*.jsx')
     },
     sass: {
-        src: path.join(publicPath, 'sass', 'src'),
-        build: path.join(publicPath, 'sass', 'build'),
-        watch: path.join(publicPath, 'sass', 'src', '**', '*.scss')
+        src: path.join(publicPath, 'styles', 'src'),
+        build: path.join(publicPath, 'styles', 'build'),
+        watch: path.join(publicPath, 'styles', 'src', '**', '*.scss')
     },
     server: {
         views: path.join(serverPath, 'views'),
